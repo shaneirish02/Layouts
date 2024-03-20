@@ -1,3 +1,4 @@
+/* Base styles */
 body {
     margin: 0;
     padding: 0;
@@ -10,42 +11,58 @@ header, nav, .content, .side-content, footer {
     padding: 20px;
 }
 
-header {
-    background-color: #ffffff; 
-}
-
-nav {
-    background-color: #ffffff; 
-}
-
 .main-content {
     display: flex;
     justify-content: space-around;
-    height: 650px;
+    align-items: center;
+    flex-wrap: wrap; /* Allows content to wrap in smaller screens */
+}
+
+.content, .side-content {
+    height: 350px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .content {
-    width: 50%; 
-    height: 600px; 
-    background-color: #ffffff; 
+    width: 50%;
 }
 
 .side-content {
-    width: 20%; 
-    height: 600px; 
-    background-color: #ffffff; 
+    width: 20%;
 }
 
 footer {
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .main-content {
         flex-direction: column;
     }
 
     .content, .side-content {
-        width: 100%; 
+        width: 100%;
+        margin-top: 10px; /* Adds a little space between stacked elements */
+    }
+}
+
+/* Additional breakpoint for very small screens */
+@media (max-width: 480px) {
+    header, nav, footer {
+        padding: 10px; /* Reduce padding to save space */
+    }
+
+    .content, .side-content {
+        height: auto; /* Allows for flexible height */
+        min-height: 200px; /* Ensures content areas have a minimum height */
+        padding: 10px; /* Adjust padding for content visibility */
+    }
+
+    body, header, nav, .content, .side-content, footer {
+        font-size: 14px; /* Adjust font size for readability */
     }
 }
