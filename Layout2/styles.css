@@ -1,3 +1,4 @@
+/* Existing base and layout styles */
 body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
@@ -10,34 +11,17 @@ header, nav, .content-a, .content-b, footer {
     padding: 20px;
 }
 
-header {
-    background-color: #ffffff; 
-}
-
-nav {
-    background-color: #ffffff; 
-}
-
 .main-content {
     display: flex;
     justify-content: space-between;
 }
 
 .content-a, .content-b {
-    width: 49%; 
-    height: 440px; 
-}
-
-.content-a {
-    background-color: #ffffff;
-}
-
-.content-b {
-    background-color: #ffffff; 
-}
-
-footer {
-    background-color: #ffffff; 
+    width: 49%;
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -46,6 +30,23 @@ footer {
     }
 
     .content-a, .content-b {
-        width: auto; 
+        width: auto;
+        margin: 10px 0; /* Add margin for spacing between content areas */
+    }
+}
+
+/* Additional media query for very small screens */
+@media (max-width: 480px) {
+    header, nav, .content-a, .content-b, footer {
+        padding: 10px;
+    }
+
+    .content-a, .content-b {
+        height: auto; /* Make height flexible */
+        min-height: 300px; /* Maintain a reasonable height for content areas */
+    }
+
+    body, h1, h2, h3, p {
+        font-size: 14px; /* Adjust font size for readability on small screens */
     }
 }
